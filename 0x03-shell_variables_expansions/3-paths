@@ -1,0 +1,2 @@
+#!/bin/bash
+IFS=':' read -ra PATH_COUNT <<< $"PATH" ; echo "${#PATH_COUNT[@]}"
