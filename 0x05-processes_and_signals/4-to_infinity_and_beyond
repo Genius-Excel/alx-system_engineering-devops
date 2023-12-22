@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# this script prnts to infinuty until its interupted.
+text=$"To infinity and beyond"
+while true
+do
+	echo "$text"
+	sleep 2
+done
