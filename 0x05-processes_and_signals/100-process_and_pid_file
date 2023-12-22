@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script perfroms different action depending on the signal.
+sig_int="SIGINT"
+sig_quit="SIGQUIT"
+sig_term="SIGTERM"
+echo $$ > /var/run/myscript.pid
+my_text="To infinity and beyond"
+while true
+do
+	echo "$my_text"
+	if [ "$sig_term" = "SIGTERM" ]; then
+		echo "I hate the kill command"
+		rm /var/run/myscript.pid
+		exit
+	elif [ "$sig_int" = "SIGINT" ]; then
+		echo "Y U no love me?!"
+	elif [ "$sig_quit" = "SIGQUIT" ]; then
+		rm /var/run/myscript.pid
+		exit
+	fi
+done
