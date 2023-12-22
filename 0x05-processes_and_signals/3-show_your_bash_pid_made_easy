@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 # This script prints the process IDs.
-parent=$(</proc/$$/status awk '/PPid/{print $2}')
-echo "$parent bash"
-echo "$$ bash"
+pgrep -l bash
