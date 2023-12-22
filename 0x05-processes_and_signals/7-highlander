@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script prints a text indefinitely and prints a different text when signaled.
+my_text=$"To infinity and beyond"
+sig_status="SIGTERM"
+while true
+do
+	echo "$my_text"
+	sleep 2
+	if [ "$sig_status" = "SIGTERM" ]; then
+		echo "I am invincible!!!"
+	fi
+done
