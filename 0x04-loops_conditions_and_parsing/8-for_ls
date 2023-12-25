@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script listas all the files in a directory in a list format.
+for files in *
+do
+	if [ -f "$files" ] &&  [ ! -h "$files" ] && [[ "$files" != *. ]]; then
+		name=$(echo "$files" | cut -d'-' -f2-)
+		echo "$name"
+	fi
+done
