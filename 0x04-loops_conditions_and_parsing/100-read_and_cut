@@ -3,7 +3,7 @@
 file="/etc/psswd"
 
 if [ -e "$file" ]; then
-	while IFS=: read -r username  userid home shell
+	while IFS=: read -r username  userid home 
 	do
 		echo "$username"
 		echo "$userid"
