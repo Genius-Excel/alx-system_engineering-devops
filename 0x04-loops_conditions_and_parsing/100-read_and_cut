@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script prints th content of a file.
+file="/etc/psswd"
+
+if [ -e "$file" ]; then
+	while IFS=: read -r username x userid x x x home shell
+	do
+		echo "$username"
+		echo "$userid"
+		echo "$home"
+	done < "$file"
+else
+	echo "No such directory"
+fi
