@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script changes a host on the device.
+
+if [ "$EUID" -ne 0 ]; then
+	echo "Please run this script as root"
+	exit 1
+fi
+
+local_host_ip="127.0.0.2"
+facebook_ip="8.8.8.8"
+
+# temp_host="/etc/hosts.tmp"
+# cp /etc/hosts "$temp_host"
+
+sed -i "s/^127\.0\.0\.1[[:space:]]\+localhost$/127.0.0.1 localhost\n$local_host_ip localhost/" /etc/hosts
+sed -i "s/^.*[[:space:]]\+facebook\.com$/\n$facebook_ip facebook.com/" /etc/hosts
+
+
+# mv "$temp_host" /etc/hosts
+
+#echo "Updated /etc/hosts/ file:"
+#cat /etc/hosts
