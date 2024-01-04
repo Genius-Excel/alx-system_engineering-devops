@@ -5,13 +5,12 @@ def match_pattern(str)
 	match_result = str.match(regex)
 
 	if match_result
-		puts match_result.to_s
+		puts match_result[0]
 	else
 		puts "$"
 	end
 end
 
-# checks for a command line argument.
 if ARGV.empty?
 	puts "Usage: #{$PROGRAM_NAME} {STRING}"
 	exit 1
