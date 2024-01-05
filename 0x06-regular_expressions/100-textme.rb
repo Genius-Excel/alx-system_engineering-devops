@@ -6,7 +6,7 @@ if ARGV.empty?
 end
 
 FILE.foreach(ARGV[0]) do |line|
-	match_data = line.match(/\[from:(\S+)\] \[to:(\S+)\] \[flags:([^]]+)\]/)
+	match_data = line.match(/\[from:(\S+)\] \[to:(\S+)\] \[flags:([^\]]+)\]/)
 
 	if mathc_data
 		sender = match_data[1]
