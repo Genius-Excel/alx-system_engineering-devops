@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+if ! command -v nc &> /dev/null; then
+	echo "netcat not installed."
+	exit 1
+fi
+
+sudo nc -l -p 98
