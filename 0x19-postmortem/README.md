@@ -24,3 +24,8 @@
 	* Enhance monitoring and alerting systems to provide real-time notification of service anomalies.
 	* Develop and implement automated deployment pipelines with integrated testing to ensure configuration changes are properly validated before deployment.
 	* Schedule regular training sessions for engineering teams to enhance awareness of best practices for configuration management and troubleshooting.
+
+## Issue Summay:
+	* Duration: The great authentication apocalypse struck our systems from 10:00 AM to 12:30 PM on April 5th, 2024 (UTC).
+	* Impact: The authentication service decided to take a coffee break, leaving users stranded at the login gates. Approximately 30% of users found themselves locked out of their accounts, pondering life's mysteries while staring at error messages.
+	* Root Cause: The mischievous gremlins of misconfiguration snuck into the authentication service's database connection pool settings, causing chaos and confusion.
