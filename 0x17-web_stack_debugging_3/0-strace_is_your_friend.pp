@@ -1,23 +1,24 @@
-# Checking strace package instllation status .
+# Install strace package if not already installed
 package { 'strace':
   ensure => installed,
 }
 
-# Execute strace command and copy the output in a file.
-exec { 'strace':
+# Run strace on Apache process to trace system calls
+exec { 'strace_apache':
   command => 'strace -f -s 1024 -o /tmp/apache_strace.txt -p $(pidof apache2)',
-  user => 'root',
-  group => 'root',
-  path => '/usr/bin',
+  user    => 'root',
+  group   => 'root',
+  path    => '/usr/bin',
   require => Package['strace'],
 }
 
-# Identify issue and excute command to check problem status.
+# Fix the identified issue (replace this with your actual fix)
 exec { 'fix_issue':
-  commnad => 'echo "Fixing Server issue with strace"',
-  user => 'root',
-  path => 'root',
-  path => '/usr/bin',
-  onlyif => 'grep -q "error message" /tmp/apache_strace.txt',
+  command => 'echo "Fixing the issue"',
+  user    => 'root',
+  group   => 'root',
+  path    => '/usr/bin',
+  onlyif  => 'grep -q "error message" /tmp/apache_strace.txt',
   require => Exec['strace_apache'],
 }
+
