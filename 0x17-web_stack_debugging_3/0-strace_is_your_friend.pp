@@ -1,6 +1,9 @@
 # print the server error to standard output.
 
-exec { 'log_error':
+exec { 'strace_apache':
   command => 'strace -p $(pidof apache2) 2>&1 | grep open',
-  path => '/usr/bin'
+  user    => 'root',
+  group   => 'root',
+  path    => '/usr/bin',
+  logoutput => true,
 }
