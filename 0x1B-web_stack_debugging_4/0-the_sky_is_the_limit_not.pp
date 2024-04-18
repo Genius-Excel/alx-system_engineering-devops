@@ -1,6 +1,6 @@
 # fix Ngnix error.
 
 exec { 'fix--for-ngnx':
-  command => 'sed -i "s/Document Root \/var\/www\/html/Document Root \/data\/html/" /etc/ngnix/sites-available/default',
+  command => 'sudo sed -i "s/15/4096/g" /etc/default/ngnix/; sudo ngnix service restart',
   path    => '/bin/'
 }
