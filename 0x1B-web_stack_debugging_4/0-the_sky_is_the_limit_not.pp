@@ -7,6 +7,6 @@ exec { 'change-nginx-limit':
 
 # Restart nginx after upadting the limit.
 -> exec { 'restart-ngnix':
-  command  => 'nginx restat',
+  command  => 'nginx restart',
   provider => shell,
 }
